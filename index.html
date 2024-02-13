@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MPSJ Robotics Club</title>
+        <style>
+            @keyframes slidein{
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+            }
+
+            @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nanum+Gothic&display=swap');
+            body{
+                background: rgb(255, 251, 234);
+                font-size: 20px;
+                margin: 0;
+            }
+            #main{
+                width: 100%;
+            }
+            #logo{
+                width: 200px;
+                height: auto;
+            }
+            #navbartop{
+                background: linear-gradient(90deg, #aaa 40%, #666 80%);
+                animation-name: slidein;
+                animation-duration: 2s;
+                transform: translateY(0);
+            }
+            #logodiv, #navlinksdiv{
+                width: fit-content;
+            }
+            #logodiv{
+                float: left;
+            }
+            #navlinksdiv{
+                transform: translateY(70%);
+                float: right;
+            }
+            #navlinksdiv a{
+                color: #ddd;
+                margin-left: 20px;
+            }
+            #maincontent{
+            }
+
+            .nanum-gothic-regular {
+                font-family: "Nanum Gothic", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+        </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body class="nanum-gothic-regular">
+    <table id="main" cellspacing="0" cellpadding="15">
+        <tbody>
+            <tr id="navbartop" valign="middle" style="vertical-align: middle;">
+                <td>
+                    <div id="logodiv"><img src="./robotics-logo.svg" id="logo"></div>
+                    <div id="navlinksdiv">
+                        <a href="">Home</a>
+                        <a href="">About Us</a>
+                        <a href="">Showcase</a>
+                        <a href="">Contact</a>
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td id="maincontent">
+                    testing
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </body>
+</html>
