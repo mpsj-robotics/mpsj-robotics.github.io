@@ -31,14 +31,16 @@
 
             html{
                 scroll-behavior: smooth;
+                background: #000300;
             }
             body{
                 background: #dcdcf1;
                 font-size: 20px;
                 margin: 0;
+                color: white;
             }
             body{
-                background: linear-gradient(339deg, #dcdcf1, #e9e9e9);
+                background: linear-gradient(339deg, #18172e, #000300);
                 background-size: 400% 400%;
                 animation: background-warble 15s ease infinite;
             }
@@ -49,19 +51,26 @@
                 100%{background-position:0% 22%}
             }
             
+            /*@keyframes logo-hue {
+                0%{filter: invert(1) sepia(0) saturate(0) hue-rotate(0deg);}
+                50%{filter: invert(0.8) sepia(1) saturate(20) hue-rotate(100deg);}
+                100%{filter: invert(1) sepia(0) saturate(0) hue-rotate(0deg);}
+            }*/
+
             #main{
                 width: 100%;
             }
             #logo{
                 width: 200px;
                 height: auto;
+                filter: invert(1);
+                /*animation: logo-hue 2s ease infinite;*/
             }
             #navbartop{
-                background: linear-gradient(90deg, #aaa 40%, #666 80%);
+                background: linear-gradient(20deg, transparent 90%, #fff5);
                 animation-name: slidein, fadein;
                 animation-duration: 2s;
                 transform: translateY(0);
-                box-shadow: 0 1px 5px black;
             }
 
            /* #navbartop {
@@ -126,16 +135,15 @@
             #body-image1{
                 animation-name: slideright-img, fadein;
                 animation-duration: 2s;
-                transform: translateX(-500%);
-                animation-fill-mode: forwards;
+                transform: translateX(0%);
             }
             #footer a{
-                color: #777;
+                color: #ddd;
                 margin-right: 20px;
                 text-decoration: none;
             }
             #footer a:hover{
-                color: #222;
+                color: #727272;
             }
             .hiddenClass{
                 display: none;
@@ -143,6 +151,45 @@
             .dropShadow{
                 box-shadow: 0 0 10px #0005, 30px 30px 60px #0005, -10px -10px 10px #0001;
             }
+            #content-top, #content-about, #content-showcase, #content-contact{
+                font-size: 24pt;
+            }
+            .body-images{
+                max-width: 600px;
+            }
+            #showcasetable td{
+                width: 295px;
+                height: 295px;
+                margin-right: 2px;
+                margin-top: 6px;
+                display: inline-block;
+                background-position: center center !important;
+                background-size: cover !important;
+            }
+            #showcasetable a{
+                width: 295px;
+                height: 295px;
+                display: block;
+            }
+            .body-paragraph a{
+                color: #3535a0;
+            }
+            .body-paragraph a:hover{
+                color: #acace7;
+            }
+            .body-paragraph a:visited{
+                color: #9c35a0;
+            }
+            .body-paragraph a:visited:hover{
+                color: #f182e2;
+            }
+            #goldarticlelink1{
+                color: #e2cf23;
+            }
+            #goldarticlelink1:hover{
+                color: #fbed6c;
+            }
+
             
             .nanum-gothic-regular {
                 font-family: "Nanum Gothic", sans-serif;
@@ -160,27 +207,29 @@
                 font-style: normal;
             }
         </style>
-        
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
     <body>
     <table id="main" cellspacing="0" cellpadding="15">
         <tbody>
             <tr id="navbartop" class="nanum-gothic-regular" valign="middle" style="vertical-align: middle;">
                 <td>
-                    <div id="logodiv"><img src="./mpsjrobotics.svg" id="logo"></div>
+                    <div id="logodiv"><img src="./robotics-logo.svg" id="logo"></div>
                     <div id="navlinksdiv">
                         <a href="#content-top">Home</a>
                         <a href="#content-about">About Us</a>
                         <a href="#content-showcase">Showcase</a>
-                        <a href="#content-contact">Contact</a>
+                        <a href="#content-contact">Featured</a>
                 </div>
                 </td>
             </tr>
@@ -188,25 +237,43 @@
                 <td id="maincontent" class="barlow-condensed-regular">
                     <br>
                 <div id="maincontent-maintext">
-                    <center><img src="./pictures/robot-placeholder2.png" id="body-image1" class="dropShadow"><br></center>
+                    <center><img src="./pictures/top-image.png" id="body-image1" class="body-images dropShadow" data-tilt data-tilt-max="4" data-tilt-speed="200" data-tilt-perspective="500"><br></center>
 
                     <div class="body-paragraph delay-1"><b id="content-top">Home</b><br>
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                    </div>
+                    <p>Michael Power/St. Joseph is the largest high school in the TCDSB and has one of the highest secondary school populations in Toronto.</p>
+                    </div><br>
 
                     <div class="body-paragraph delay-2"><b id="content-about">About Us</b><br>
-                    <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-                    </div>
+                    <p>Since 2006, the Michael Power/St. Joseph Robotics Team has been putting its' greatest minds to work in the annual Skills Canada Mobile Robotics Competition. 
+                        Members work together, using their skills in 3D modelling, electronics, and programming to create robots. In the past, the MPSJ Robotics Team has won many awards
+                        for its' exemplary performance.</p>
+                    </div><br>
 
                     <div class="body-paragraph delay-3"><b id="content-showcase">Showcase</b><br>
-                    <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</p>
-                    </div>
+                        Click for full images.
+                        <table id="showcasetable">
+                            <tr>
+                                <td id="showcase-image1" style="background: url(./pictures/robot1.png);" data-tilt data-tilt-max="3" data-tilt-speed="200" data-tilt-perspective="500">  <a href="./pictures/robot1.png"> </a>  </td>
+                                <td id="showcase-image2" style="background: url(./pictures/robot2.png);" data-tilt data-tilt-max="3" data-tilt-speed="200" data-tilt-perspective="500">  <a href="./pictures/robot2.png"> </a>  </td>
+                                <td id="showcase-image3" style="background: url(./pictures/robot3.png);" data-tilt data-tilt-max="3" data-tilt-speed="200" data-tilt-perspective="500">  <a href="./pictures/robot3.png"> </a>  </td>
+                                <td id="showcase-image4" style="background: url(./pictures/robot4.png);" data-tilt data-tilt-max="3" data-tilt-speed="200" data-tilt-perspective="500">  <a href="./pictures/robot4.png"> </a>  </td>
+                            </tr>
+                        </table>
+                    </div><br>
 
-                    <div class="body-paragraph delay-4"><b id="content-contact">Contact</b><br>
-                    <p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."</p>
+                    <div class="body-paragraph delay-4"><b id="content-contact">Featured Articles/Awards</b><br>
+                    <p>
+                        <ul>
+                        <li><a id="goldarticlelink1" href="https://www.tcdsb.org/o/michaelpowerstjoseph/article/1134063">"Showing the Power of MPSJ Robotics at the Skills Canada Nationals in Winnipeg"</a></li>
+                        <li><a href="https://twitter.com/MPSJGuidance/status/1531643037532798979">Twitter: <b>"Congrats MPSJ Robotics Team for winning GOLD🥇in the Finals"</b></a></li>
+                        <li><a href="https://canada.constructconnect.com/dcn/news/labour/2023/06/team-ontario-wins-39-medals-at-skills-canada-national-competition#:~:text=Alexandr%20Protsenko%20and%20Lanhao%20Zhuang%2C%20Mobile%20Robotics%20%28S%29%2C%20gold%2C%20Toronto%20Catholic%20District%20School%20Board">"Team Ontario wins 39 medals at Skills Canada National Competition"</a></li>
+                        <li><a href="https://twitter.com/MalecStanley/status/1653193964453806080">Twitter: <b>"Congratulations to MPSJ’s robotics team for winning the TCDSB student achievement award for robotics."</b></a></li>
+                        </ul>
+                    </p>
                     </div>
                     
                     <center class="body-paragraph delay-5">
+                    <hr color="white"><br>
                     <div id="footer">
                          <a href="#footer" onclick="expandContactForm()">Contact</a>  
                          <a href="mailto:test@gmail.com">Email</a>  
@@ -240,5 +307,60 @@
             document.getElementById("footercontact").classList.toggle("hiddenClass");
         }
     </script>
+
+<script type="text/javascript" src="./vanilla-tilt.min.js"></script>
+<script type="text/javascript">
+    VanillaTilt.init(document.querySelector("#body-image1"));
+    VanillaTilt.init(document.querySelector("#showcase-image1"));
+    VanillaTilt.init(document.querySelector("#showcase-image2"));
+    VanillaTilt.init(document.querySelector("#showcase-image3"));
+    VanillaTilt.init(document.querySelector("#showcase-image4"));
+
+    function countWords(str) {
+        return str.trim().split(/\s+/).length;
+    }
+
+    if (window.location.search.indexOf('?beg') === 0) {
+
+    var elems = document.querySelectorAll("img");
+    var index = 0, length = elems.length;
+    for ( ; index < length; index++) {
+        elems[index].setAttribute("src", "./pictures/beg.png")
+        document.querySelector("#body-image1").style.width = "600px"
+        document.querySelector("#body-image1").style.height = "395px"
+        document.querySelector("#logo").style.width = "200px"
+        document.querySelector("#logo").style.height = "62px"
+        document.querySelector("#logo").style.filter = "invert(0)"
+    }
+    var elems2 = document.querySelectorAll("#showcasetable td")
+    var index2 = 0, length = elems2.length;
+    for ( ; index2 < length; index2++) {
+        elems2[index2].setAttribute("style", "background: url(./pictures/beg.png);")
+    }
+    
+
+    }
+/*
+
+
+    var res = $('body  *').contents().map(function () {
+    if (this.nodeType == 3 && this.nodeValue.trim() != "") //check for nodetype text and ignore empty text nodes
+        return this.nodeValue.trim().split(/\W+/);  //split the nodevalue to get words.
+}).get(); //get the array of words.
+
+console.log(res);
+
+for (let i = 0; i < res.length; i++) {
+    console.log(res[i])
+    document.body.innerHTML = document.body.innerHTML.replace(res[i], 'Beg');
+}
+
+
+
+
+}
+    document.body.innerHTML = document.body.innerHTML.replaceAll('non', 'hi');
+*/
+</script>
     </body>
 </html>

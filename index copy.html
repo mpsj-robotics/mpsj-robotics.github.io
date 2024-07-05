@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MPSJ Robotics Club</title>
+        <style>
+            @keyframes slidein{
+            from { transform: translateY(-100%); }
+
+            to { transform: translateY(0); }
+            }
+
+            @keyframes slideright{
+            from { transform: translateX(-200%);}
+
+            to {transform: translateX(0);}
+            }
+
+            @keyframes slideright-img{
+            from { transform: translateX(-500%);}
+
+            to {transform: translateX(0);}
+            }
+
+            @keyframes fadein{
+            0% {filter: opacity(0);}
+
+            50% {filter: opacity(0.3);}
+
+            100% {filter: opacity(1);}
+            }
+
+            html{
+                scroll-behavior: smooth;
+            }
+            body{
+                background: #dcdcf1;
+                font-size: 20px;
+                margin: 0;
+            }
+            body{
+                background: linear-gradient(339deg, #fff9, #fff9), linear-gradient(339deg, #fff9, #fff9), url(./pictures/robot-placeholder2.png);
+                background-size: 200% 200%;
+                animation: background-warble 60s ease-in-out infinite;
+            }
+
+            @keyframes background-warble {
+                0%{background-position:0% 100%}
+                25%{background-position:100% 50%}
+                50%{background-position:50% 100%}
+                75%{background-position:25% 25%}
+                100%{background-position:0% 100%}
+            }
+            
+            #main{
+                width: 100%;
+            }
+            #logo{
+                width: 200px;
+                height: auto;
+            }
+            #navbartop{
+                background: linear-gradient(90deg, #aaa 40%, #666 80%);
+                animation-name: slidein, fadein;
+                animation-duration: 2s;
+                transform: translateY(0);
+                box-shadow: 0 1px 5px black;
+            }
+
+           /* #navbartop {
+                background: linear-gradient(269deg, #aaaaaa, #666666);
+                background-size: 400% 400%;
+                animation: navbar-warble 30s ease infinite;
+            }
+
+            @keyframes navbar-warble {
+                0%{background-position:0% 49%}
+                50%{background-position:100% 52%}
+                100%{background-position:0% 49%}
+            }*/
+
+            #logodiv, #navlinksdiv{
+                width: fit-content;
+            }
+            #logodiv{
+                float: left;
+            }
+            #navlinksdiv{
+                transform: translateY(70%);
+                float: right;
+            }
+            #navlinksdiv a{
+                color: #ddd;
+                margin-right: 20px;
+                text-decoration: none;
+            }
+            #navlinksdiv a:hover{
+                color: #aaa;
+            }
+            #maincontent{
+                font-size: 24px;
+            }
+            #maincontent-maintext{
+                width: 65%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .body-paragraph{
+                animation-name: slideright, fadein;
+                animation-duration: 2s;
+                transform: translateX(-200%);
+                animation-fill-mode: forwards;
+            }
+            .delay-1{
+                animation-delay: 0.25s;
+            }
+            .delay-2{
+                animation-delay: 0.5s;
+            }
+            .delay-3{
+                animation-delay: 0.75s;
+            }
+            .delay-4{
+                animation-delay: 1s;
+            }
+            .delay-5{
+                animation-delay: 1.25s;
+            }
+            #body-image1{
+                animation-name: slideright-img, fadein;
+                animation-duration: 2s;
+                transform: translateX(0%);
+            }
+            #footer a{
+                color: #777;
+                margin-right: 20px;
+                text-decoration: none;
+            }
+            #footer a:hover{
+                color: #222;
+            }
+            .hiddenClass{
+                display: none;
+            }
+            .dropShadow{
+                box-shadow: 0 0 10px #0005, 30px 30px 60px #0005, -10px -10px 10px #0001;
+            }
+            
+            .nanum-gothic-regular {
+                font-family: "Nanum Gothic", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+            .barlow-condensed-regular {
+                font-family: "Barlow Condensed", sans-serif;
+                font-weight: 300;
+                font-style: normal;
+            }
+            .barlow-condensed-regular b {
+                font-family: "Barlow Condensed", sans-serif;
+                font-weight: 600;
+                font-style: normal;
+            }
+        </style>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    </head>
+    <body>
+    <table id="main" cellspacing="0" cellpadding="15">
+        <tbody>
+            <tr id="navbartop" class="nanum-gothic-regular" valign="middle" style="vertical-align: middle;">
+                <td>
+                    <div id="logodiv"><img src="./robotics-logo.svg" id="logo"></div>
+                    <div id="navlinksdiv">
+                        <a href="#content-top">Home</a>
+                        <a href="#content-about">About Us</a>
+                        <a href="#content-showcase">Showcase</a>
+                        <a href="#content-contact">Contact</a>
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td id="maincontent" class="barlow-condensed-regular">
+                    <br>
+                <div id="maincontent-maintext">
+                    <center><img src="./pictures/robot-placeholder2.png" id="body-image1" class="dropShadow" data-tilt><br></center>
+
+                    <div class="body-paragraph delay-1"><b id="content-top">Home</b><br>
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                    </div>
+
+                    <div class="body-paragraph delay-2"><b id="content-about">About Us</b><br>
+                    <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+                    </div>
+
+                    <div class="body-paragraph delay-3"><b id="content-showcase">Showcase</b><br>
+                    <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</p>
+                    </div>
+
+                    <div class="body-paragraph delay-4"><b id="content-contact">Contact</b><br>
+                    <p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."</p>
+                    </div>
+                    
+                    <center class="body-paragraph delay-5">
+                    <div id="footer">
+                         <a href="#footer" onclick="expandContactForm()">Contact</a>  
+                         <a href="mailto:test@gmail.com">Email</a>  
+                         <a href="https://tcdsb.org">TCDSB Website</a>  
+                    </div>
+                    <div id="footercontact" class="hiddenClass">
+                        <form
+  action="https://formspree.io/f/mjvnwyrr"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
+                    </div>
+                    </center>
+                </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function expandContactForm(){
+            document.getElementById("footercontact").classList.toggle("hiddenClass");
+        }
+    </script>
+
+<script type="text/javascript" src="./vanilla-tilt.min.js"></script>
+<script type="text/javascript">
+    VanillaTilt.init(document.querySelector("#body-image1"), {
+        max: 10,
+        speed: 400
+    });
+</script>
+    </body>
+</html>
